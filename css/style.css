@@ -1,0 +1,799 @@
+/* ==========================================
+   VARIABLES
+========================================== */
+
+:root {
+
+    --silver: #d9d9d9;
+    --silver-dark: #9b9b9b;
+
+    --black: #0d0d0d;
+    --black-soft: #161616;
+
+    --white: #ffffff;
+
+    --shadow:
+        0 10px 30px rgba(0,0,0,.35);
+
+}
+
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+body {
+
+    background: var(--black);
+    color: var(--white);
+
+    font-family: 'Montserrat', sans-serif;
+
+    overflow-x: hidden;
+
+}
+
+/* ==========================================
+   FONDO
+========================================== */
+/* 
+#particles {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(255,255,255,.06),
+            transparent 35%
+        );
+
+    z-index: -1;
+
+} */
+
+/* ==========================================
+   GENERALES
+========================================== */
+
+.container {
+
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+}
+
+.section {
+
+    padding: 90px 20px;
+
+}
+
+.gris {
+
+    background: var(--black-soft);
+
+}
+
+h1,
+h2,
+h3 {
+
+    font-family: 'Cormorant Garamond', serif;
+
+}
+
+h2 {
+
+    text-align: center;
+
+    font-size: 3rem;
+
+    margin-bottom: 40px;
+
+    color: var(--silver);
+
+}
+
+.texto {
+
+    max-width: 800px;
+
+    margin: auto;
+
+    text-align: center;
+
+    line-height: 1.9;
+
+    font-size: 1.1rem;
+
+}
+
+/*======================================================
+    HERO
+======================================================*/
+
+.hero{
+
+    background:
+
+    radial-gradient(
+        circle at center,
+        #2b2b2b 0%,
+        #161616 35%,
+        #090909 100%
+    );
+
+}
+
+/*----------------------------------------------------*/
+/* Fondo con brillo                                   */
+/*----------------------------------------------------*/
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background-image:
+
+        radial-gradient(circle,rgba(255,255,255,.20) 1px,transparent 1px);
+
+    background-size:120px 120px;
+
+    opacity:.20;
+
+    animation: flotar 6s ease-in-out infinite;
+
+}
+
+@keyframes fondo{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(120px);
+
+    }
+
+}
+
+/*----------------------------------------------------*/
+/* ESFERA DISCO                                       */
+/*----------------------------------------------------*/
+
+.disco-ball{
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    top:-120px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+
+    url("../img/disco-ball.png");
+
+    background-size:cover;
+
+    filter:
+
+        drop-shadow(0 0 30px rgba(255,255,255,.4));
+
+    animation:girar 35s linear infinite;
+
+    z-index:2;
+
+}
+
+
+@keyframes balanceo{
+
+    0%{
+
+        transform:
+            translateX(-50%)
+            rotate(-3deg);
+
+        transform-origin:top center;
+
+    }
+
+    50%{
+
+        transform:
+            translateX(-50%)
+            rotate(3deg);
+
+        transform-origin:top center;
+
+    }
+
+    100%{
+
+        transform:
+            translateX(-50%)
+            rotate(-3deg);
+
+        transform-origin:top center;
+
+    }
+
+}
+
+@keyframes girar{
+
+    from{
+
+        transform:
+        translateX(-50%)
+        rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+        translateX(-50%)
+        rotate(360deg);
+
+    }
+
+}
+
+/*----------------------------------------------------*/
+/* Destellos                                          */
+/*----------------------------------------------------*/
+
+.sparkle{
+
+    position:absolute;
+
+    width:6px;
+
+    height:6px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+
+    0 0 20px white,
+
+    0 0 40px white;
+
+    animation:destello 3s infinite;
+
+}
+
+@keyframes destello{
+
+    0%{
+
+        opacity:.1;
+        transform:scale(.2);
+
+    }
+
+    50%{
+
+        opacity:1;
+        transform:scale(1.2);
+
+    }
+
+    100%{
+
+        opacity:.1;
+        transform:scale(.2);
+
+    }
+
+}
+
+/*----------------------------------------------------*/
+/* CONTENIDO                                          */
+/*----------------------------------------------------*/
+
+.hero-content{
+
+    position:relative;
+
+    z-index:20;
+
+    margin-top:180px;
+
+}
+
+.subtitle{
+
+    color:#d8d8d8;
+
+    letter-spacing:10px;
+
+    text-transform:uppercase;
+
+    font-size:.9rem;
+
+}
+
+.hero h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:6rem;
+
+    color:white;
+
+    margin:20px 0;
+
+    text-shadow:
+
+    0 0 25px rgba(255,255,255,.15);
+
+}
+
+.fecha{
+
+    font-size:1.4rem;
+
+    color:#d9d9d9;
+
+}
+
+/*----------------------------------------------------*/
+/* BOTON                                              */
+/*----------------------------------------------------*/
+
+.btn-principal{
+
+    background:transparent;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    backdrop-filter:blur(10px);
+
+}
+
+.btn-principal:hover{
+
+    background:white;
+
+    color:black;
+
+    transform:translateY(-4px);
+
+}
+
+/*======================================================
+    RESPONSIVE
+======================================================*/
+
+@media(max-width:768px){
+
+.disco-ball{
+
+    width:220px;
+
+    height:220px;
+
+    top:-70px;
+
+    box-shadow:
+
+        0 20px 60px rgba(255,255,255,.15);
+
+}
+
+.hero-content{
+
+    margin-top:130px;
+
+}
+
+.hero h1{
+
+    font-size:3.7rem;
+
+}
+
+.subtitle{
+
+    letter-spacing:5px;
+
+    font-size:.75rem;
+
+}
+
+.fecha{
+
+    font-size:1rem;
+
+}
+
+.btn-principal{
+
+    width:90%;
+
+}
+
+}
+/* ==========================================
+   BOTONES
+========================================== */
+
+.btn-principal,
+.btn-secundario {
+
+    display: inline-block;
+
+    margin-top: 35px;
+
+    text-decoration: none;
+
+    padding: 15px 30px;
+
+    border-radius: 40px;
+
+    transition: .3s;
+
+}
+
+.btn-principal {
+
+    background: linear-gradient(
+        135deg,
+        #d9d9d9,
+        #9b9b9b
+    );
+
+    color: #000;
+
+    font-weight: 600;
+
+}
+
+.btn-principal:hover {
+
+    transform: translateY(-3px);
+
+}
+
+.btn-secundario {
+
+    border: 1px solid var(--silver);
+
+    color: var(--silver);
+
+}
+
+.btn-secundario:hover {
+
+    background: var(--silver);
+
+    color: black;
+
+}
+
+/* ==========================================
+   COUNTDOWN
+========================================== */
+
+.countdown {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+
+}
+
+.item {
+
+    width: 140px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    background: #1d1d1d;
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow);
+
+}
+
+.item span {
+
+    display: block;
+
+    font-size: 3rem;
+
+    font-weight: bold;
+
+}
+
+.item label {
+
+    color: var(--silver);
+
+}
+
+/* ==========================================
+   INFORMACION
+========================================== */
+
+.cards {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap: 25px;
+
+}
+
+.card {
+
+    background: #1d1d1d;
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    transition: .3s;
+
+}
+
+.card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+.card i {
+
+    font-size: 2rem;
+
+    color: var(--silver);
+
+    margin-bottom: 15px;
+
+}
+
+.card h3 {
+
+    margin-bottom: 10px;
+
+}
+
+/* ==========================================
+   DRESS CODE
+========================================== */
+
+.dress {
+
+    max-width: 450px;
+
+    margin: auto;
+
+    text-align: center;
+
+}
+
+.dress i {
+
+    font-size: 4rem;
+
+    color: var(--silver);
+
+    margin-bottom: 20px;
+
+}
+
+/* ==========================================
+   GALERIA
+========================================== */
+
+.gallery {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(250px,1fr));
+
+    gap: 20px;
+
+}
+
+.gallery img {
+
+    width: 100%;
+
+    height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    transition: .3s;
+
+}
+
+.gallery img:hover {
+
+    transform: scale(1.03);
+
+}
+
+/* ==========================================
+   MAPA
+========================================== */
+
+.mapa {
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+}
+
+.mapa iframe {
+
+    width: 100%;
+
+    height: 450px;
+
+    border: 0;
+
+}
+
+/* ==========================================
+   MENSAJES
+========================================== */
+
+#formMensajes {
+
+    max-width: 700px;
+
+    margin: 40px auto 0;
+
+}
+
+#formMensajes input,
+#formMensajes textarea {
+
+    width: 100%;
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 10px;
+
+    background: #222;
+
+    color: white;
+
+}
+
+#formMensajes button {
+
+    width: 100%;
+
+    border: none;
+
+    cursor: pointer;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #d9d9d9,
+        #9b9b9b
+    );
+
+    font-weight: bold;
+
+}
+
+#respuesta {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: var(--silver);
+
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+
+    padding: 100px 20px;
+
+    text-align: center;
+
+}
+
+footer h2 {
+
+    margin-bottom: 20px;
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:768px){
+
+    .hero h1 {
+
+        font-size: 4rem;
+
+    }
+
+    h2 {
+
+        font-size: 2.3rem;
+
+    }
+
+    .item {
+
+        width: 120px;
+
+    }
+
+}
