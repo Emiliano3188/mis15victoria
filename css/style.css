@@ -1,151 +1,150 @@
-/* ==========================================
-   VARIABLES
-========================================== */
+/*==================================================
+    MIS 15 - VALENTINA
+==================================================*/
 
-:root {
 
-    --silver: #d9d9d9;
-    --silver-dark: #9b9b9b;
+/*==============================
+    VARIABLES
+==============================*/
 
-    --black: #0d0d0d;
-    --black-soft: #161616;
+:root{
 
-    --white: #ffffff;
+    --fondo:#0c0c0c;
 
-    --shadow:
-        0 10px 30px rgba(0,0,0,.35);
+    --fondo2:#181818;
 
-}
+    --plata:#d9d9d9;
 
-/* ==========================================
-   RESET
-========================================== */
+    --plata2:#bdbdbd;
 
-* {
+    --texto:#ffffff;
 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    --glass:rgba(255,255,255,.08);
 
 }
 
-html {
 
-    scroll-behavior: smooth;
+/*==============================
+    RESET
+==============================*/
 
-}
+*{
 
-body {
+    margin:0;
 
-    background: var(--black);
-    color: var(--white);
+    padding:0;
 
-    font-family: 'Montserrat', sans-serif;
-
-    overflow-x: hidden;
+    box-sizing:border-box;
 
 }
 
-/* ==========================================
-   FONDO
-========================================== */
-/* 
-#particles {
+html{
 
-    position: fixed;
-
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at top,
-            rgba(255,255,255,.06),
-            transparent 35%
-        );
-
-    z-index: -1;
-
-} */
-
-/* ==========================================
-   GENERALES
-========================================== */
-
-.container {
-
-    width: 90%;
-    max-width: 1200px;
-
-    margin: auto;
+    scroll-behavior:smooth;
 
 }
 
-.section {
+body{
 
-    padding: 90px 20px;
+    background:var(--fondo);
 
-}
+    color:white;
 
-.gris {
+    font-family:Montserrat,sans-serif;
 
-    background: var(--black-soft);
-
-}
-
-h1,
-h2,
-h3 {
-
-    font-family: 'Cormorant Garamond', serif;
+    overflow-x:hidden;
 
 }
 
-h2 {
 
-    text-align: center;
+/*==============================
+    TIPOGRAFIAS
+==============================*/
 
-    font-size: 3rem;
+h1,h2,h3{
 
-    margin-bottom: 40px;
-
-    color: var(--silver);
-
-}
-
-.texto {
-
-    max-width: 800px;
-
-    margin: auto;
-
-    text-align: center;
-
-    line-height: 1.9;
-
-    font-size: 1.1rem;
+    font-family:'Cormorant Garamond',serif;
 
 }
 
-/*======================================================
+h2{
+
+    font-size:3rem;
+
+    color:var(--plata);
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+p{
+
+    line-height:1.8;
+
+}
+
+
+/*==============================
+    CONTENEDORES
+==============================*/
+
+.container{
+
+    width:92%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+section{
+
+    padding:90px 0;
+
+}
+
+
+/*==============================
     HERO
-======================================================*/
+==============================*/
+/*==================================================
+    HERO NUEVO
+==================================================*/
 
 .hero{
 
-    background:
+    position:relative;
 
-    radial-gradient(
-        circle at center,
-        #2b2b2b 0%,
-        #161616 35%,
-        #090909 100%
-    );
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    text-align:center;
+
+    background:
+        radial-gradient(circle at center,
+            rgba(255,255,255,.08) 0%,
+            rgba(255,255,255,0) 35%),
+        linear-gradient(
+            180deg,
+            #1c1c1c 0%,
+            #111111 35%,
+            #080808 100%);
 
 }
 
-/*----------------------------------------------------*/
-/* Fondo con brillo                                   */
-/*----------------------------------------------------*/
+/*==================================================
+    ESFERA COMO FONDO
+==================================================*/
 
 .hero::before{
 
@@ -153,241 +152,126 @@ h2 {
 
     position:absolute;
 
-    inset:0;
+    width:950px;
 
-    background-image:
-
-        radial-gradient(circle,rgba(255,255,255,.20) 1px,transparent 1px);
-
-    background-size:120px 120px;
-
-    opacity:.20;
-
-    animation: flotar 6s ease-in-out infinite;
-
-}
-
-@keyframes fondo{
-
-    from{
-
-        transform:translateY(0);
-
-    }
-
-    to{
-
-        transform:translateY(120px);
-
-    }
-
-}
-
-/*----------------------------------------------------*/
-/* ESFERA DISCO                                       */
-/*----------------------------------------------------*/
-
-.disco-ball{
-
-    position:absolute;
-
-    width:320px;
-
-    height:320px;
-
-    top:-120px;
+    height:950px;
 
     left:50%;
 
+    top:-430px;
+
     transform:translateX(-50%);
 
-    border-radius:50%;
+    background:url("../img/disco-ball.png");
 
-    background:
+    background-size:contain;
 
-    url("../img/disco-ball.png");
+    background-repeat:no-repeat;
 
-    background-size:cover;
+    background-position:center;
 
-    filter:
+    opacity:.28;
 
-        drop-shadow(0 0 30px rgba(255,255,255,.4));
-
-    animation:girar 35s linear infinite;
-
-    z-index:2;
+    z-index:0;
 
 }
-
-
-@keyframes balanceo{
-
-    0%{
-
-        transform:
-            translateX(-50%)
-            rotate(-3deg);
-
-        transform-origin:top center;
-
-    }
-
-    50%{
-
-        transform:
-            translateX(-50%)
-            rotate(3deg);
-
-        transform-origin:top center;
-
-    }
-
-    100%{
-
-        transform:
-            translateX(-50%)
-            rotate(-3deg);
-
-        transform-origin:top center;
-
-    }
-
-}
-
-@keyframes girar{
-
-    from{
-
-        transform:
-        translateX(-50%)
-        rotate(0deg);
-
-    }
-
-    to{
-
-        transform:
-        translateX(-50%)
-        rotate(360deg);
-
-    }
-
-}
-
-/*----------------------------------------------------*/
-/* Destellos                                          */
-/*----------------------------------------------------*/
-
-.sparkle{
-
-    position:absolute;
-
-    width:6px;
-
-    height:6px;
-
-    border-radius:50%;
-
-    background:white;
-
-    box-shadow:
-
-    0 0 20px white,
-
-    0 0 40px white;
-
-    animation:destello 3s infinite;
-
-}
-
-@keyframes destello{
-
-    0%{
-
-        opacity:.1;
-        transform:scale(.2);
-
-    }
-
-    50%{
-
-        opacity:1;
-        transform:scale(1.2);
-
-    }
-
-    100%{
-
-        opacity:.1;
-        transform:scale(.2);
-
-    }
-
-}
-
-/*----------------------------------------------------*/
-/* CONTENIDO                                          */
-/*----------------------------------------------------*/
-
 .hero-content{
 
     position:relative;
 
     z-index:20;
 
-    margin-top:180px;
+    width:90%;
+
+    max-width:800px;
+
+    margin-top:120px;
 
 }
 
 .subtitle{
 
-    color:#d8d8d8;
+    color:var(--plata);
 
-    letter-spacing:10px;
+    letter-spacing:8px;
 
     text-transform:uppercase;
 
-    font-size:.9rem;
+    font-size:.8rem;
 
 }
 
 .hero h1{
 
-    font-family:'Cormorant Garamond',serif;
-
     font-size:6rem;
 
     color:white;
 
-    margin:20px 0;
-
-    text-shadow:
-
-    0 0 25px rgba(255,255,255,.15);
+    margin:15px 0;
 
 }
 
 .fecha{
 
-    font-size:1.4rem;
+    color:var(--plata);
 
-    color:#d9d9d9;
+    font-size:1.3rem;
 
 }
 
-/*----------------------------------------------------*/
-/* BOTON                                              */
-/*----------------------------------------------------*/
+
+/*==============================
+    ESFERA
+==============================*/
+
+.disco-ball{
+
+    position:absolute;
+
+    top:-70px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:220px;
+
+    height:220px;
+
+    background:url("../img/disco-ball.png");
+
+    background-size:cover;
+
+    filter:drop-shadow(0 10px 35px rgba(255,255,255,.15));
+
+    z-index:5;
+
+}
+
+
+/*==============================
+    BOTON
+==============================*/
 
 .btn-principal{
 
-    background:transparent;
+    display:inline-block;
+
+    margin-top:40px;
+
+    padding:16px 40px;
+
+    text-decoration:none;
 
     color:white;
 
-    border:1px solid rgba(255,255,255,.35);
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:50px;
 
     backdrop-filter:blur(10px);
+
+    transition:.35s;
 
 }
 
@@ -397,403 +281,148 @@ h2 {
 
     color:black;
 
-    transform:translateY(-4px);
+}
+
+
+/*==============================
+    CARDS
+==============================*/
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
 
 }
 
-/*======================================================
+.card{
+
+    background:var(--glass);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    text-align:center;
+
+}
+
+
+/*==============================
+    GALERIA
+==============================*/
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+}
+
+.gallery img{
+
+    width:100%;
+
+    border-radius:18px;
+
+}
+
+
+/*==============================
+    FORMULARIO
+==============================*/
+
+input,
+textarea{
+
+    width:100%;
+
+    padding:16px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#202020;
+
+    color:white;
+
+}
+
+button{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(90deg,#d9d9d9,#bfbfbf);
+
+    cursor:pointer;
+
+}
+
+
+/*==============================
+    FOOTER
+==============================*/
+
+footer{
+
+    padding:80px;
+
+    text-align:center;
+
+}
+
+
+/*==============================
     RESPONSIVE
-======================================================*/
+==============================*/
 
 @media(max-width:768px){
-
-.disco-ball{
-
-    width:220px;
-
-    height:220px;
-
-    top:-70px;
-
-    box-shadow:
-
-        0 20px 60px rgba(255,255,255,.15);
-
-}
-
-.hero-content{
-
-    margin-top:130px;
-
-}
 
 .hero h1{
 
-    font-size:3.7rem;
+    font-size:3.8rem;
 
 }
 
-.subtitle{
+h2{
 
-    letter-spacing:5px;
-
-    font-size:.75rem;
+    font-size:2.3rem;
 
 }
 
-.fecha{
+.gallery{
 
-    font-size:1rem;
-
-}
-
-.btn-principal{
-
-    width:90%;
+    grid-template-columns:1fr;
 
 }
 
-}
-/* ==========================================
-   BOTONES
-========================================== */
+.disco-ball{
 
-.btn-principal,
-.btn-secundario {
+    width:170px;
 
-    display: inline-block;
+    height:170px;
 
-    margin-top: 35px;
-
-    text-decoration: none;
-
-    padding: 15px 30px;
-
-    border-radius: 40px;
-
-    transition: .3s;
+    top:-40px;
 
 }
-
-.btn-principal {
-
-    background: linear-gradient(
-        135deg,
-        #d9d9d9,
-        #9b9b9b
-    );
-
-    color: #000;
-
-    font-weight: 600;
-
-}
-
-.btn-principal:hover {
-
-    transform: translateY(-3px);
-
-}
-
-.btn-secundario {
-
-    border: 1px solid var(--silver);
-
-    color: var(--silver);
-
-}
-
-.btn-secundario:hover {
-
-    background: var(--silver);
-
-    color: black;
-
-}
-
-/* ==========================================
-   COUNTDOWN
-========================================== */
-
-.countdown {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 25px;
-
-    flex-wrap: wrap;
-
-}
-
-.item {
-
-    width: 140px;
-
-    padding: 25px;
-
-    text-align: center;
-
-    background: #1d1d1d;
-
-    border-radius: 20px;
-
-    box-shadow: var(--shadow);
-
-}
-
-.item span {
-
-    display: block;
-
-    font-size: 3rem;
-
-    font-weight: bold;
-
-}
-
-.item label {
-
-    color: var(--silver);
-
-}
-
-/* ==========================================
-   INFORMACION
-========================================== */
-
-.cards {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit,minmax(250px,1fr));
-
-    gap: 25px;
-
-}
-
-.card {
-
-    background: #1d1d1d;
-
-    padding: 35px;
-
-    border-radius: 20px;
-
-    text-align: center;
-
-    transition: .3s;
-
-}
-
-.card:hover {
-
-    transform: translateY(-5px);
-
-}
-
-.card i {
-
-    font-size: 2rem;
-
-    color: var(--silver);
-
-    margin-bottom: 15px;
-
-}
-
-.card h3 {
-
-    margin-bottom: 10px;
-
-}
-
-/* ==========================================
-   DRESS CODE
-========================================== */
-
-.dress {
-
-    max-width: 450px;
-
-    margin: auto;
-
-    text-align: center;
-
-}
-
-.dress i {
-
-    font-size: 4rem;
-
-    color: var(--silver);
-
-    margin-bottom: 20px;
-
-}
-
-/* ==========================================
-   GALERIA
-========================================== */
-
-.gallery {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit,minmax(250px,1fr));
-
-    gap: 20px;
-
-}
-
-.gallery img {
-
-    width: 100%;
-
-    height: 350px;
-
-    object-fit: cover;
-
-    border-radius: 20px;
-
-    transition: .3s;
-
-}
-
-.gallery img:hover {
-
-    transform: scale(1.03);
-
-}
-
-/* ==========================================
-   MAPA
-========================================== */
-
-.mapa {
-
-    overflow: hidden;
-
-    border-radius: 20px;
-
-}
-
-.mapa iframe {
-
-    width: 100%;
-
-    height: 450px;
-
-    border: 0;
-
-}
-
-/* ==========================================
-   MENSAJES
-========================================== */
-
-#formMensajes {
-
-    max-width: 700px;
-
-    margin: 40px auto 0;
-
-}
-
-#formMensajes input,
-#formMensajes textarea {
-
-    width: 100%;
-
-    padding: 15px;
-
-    margin-bottom: 15px;
-
-    border: 1px solid rgba(255,255,255,.15);
-
-    border-radius: 10px;
-
-    background: #222;
-
-    color: white;
-
-}
-
-#formMensajes button {
-
-    width: 100%;
-
-    border: none;
-
-    cursor: pointer;
-
-    padding: 15px;
-
-    border-radius: 10px;
-
-    background: linear-gradient(
-        135deg,
-        #d9d9d9,
-        #9b9b9b
-    );
-
-    font-weight: bold;
-
-}
-
-#respuesta {
-
-    text-align: center;
-
-    margin-top: 20px;
-
-    color: var(--silver);
-
-}
-
-/* ==========================================
-   FOOTER
-========================================== */
-
-footer {
-
-    padding: 100px 20px;
-
-    text-align: center;
-
-}
-
-footer h2 {
-
-    margin-bottom: 20px;
-
-}
-
-/* ==========================================
-   MOBILE
-========================================== */
-
-@media(max-width:768px){
-
-    .hero h1 {
-
-        font-size: 4rem;
-
-    }
-
-    h2 {
-
-        font-size: 2.3rem;
-
-    }
-
-    .item {
-
-        width: 120px;
-
-    }
 
 }
