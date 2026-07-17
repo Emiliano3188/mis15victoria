@@ -191,9 +191,122 @@ section{
 
 .subtitle{
 
-    color:var(--plata);
+    color:#d9d9d9;
 
-    letter-spacing:8px;
+    font-size:.9rem;
+
+    letter-spacing:10px;
+
+    text-transform:uppercase;
+
+}
+
+.hero h1{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:7rem;
+
+    color:white;
+
+    letter-spacing:4px;
+
+    margin:20px 0;
+
+    text-shadow:
+
+        0 5px 20px rgba(0,0,0,.35);
+
+}
+
+.fecha{
+
+    color:#e5e5e5;
+
+    letter-spacing:4px;
+
+    font-size:1.2rem;
+
+}
+
+
+/*==================================================
+    CUENTA REGRESIVA
+==================================================*/
+
+.countdown-section{
+
+    background:#111;
+
+    padding:100px 20px;
+
+}
+
+.countdown{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+    flex-wrap:wrap;
+
+    margin-top:50px;
+
+}
+
+.count-box{
+
+    width:170px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.03)
+        );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    text-align:center;
+
+    transition:.35s;
+
+}
+
+.count-box:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(255,255,255,.18);
+
+}
+
+.count-box span{
+
+    display:block;
+
+    font-size:4rem;
+
+    font-family:'Cormorant Garamond',serif;
+
+    color:#f4f4f4;
+
+}
+
+.count-box label{
+
+    color:#cfcfcf;
+
+    letter-spacing:3px;
 
     text-transform:uppercase;
 
@@ -201,24 +314,23 @@ section{
 
 }
 
-.hero h1{
+@media(max-width:768px){
 
-    font-size:6rem;
+    .count-box{
 
-    color:white;
+        width:145px;
 
-    margin:15px 0;
+        padding:25px;
+
+    }
+
+    .count-box span{
+
+        font-size:3rem;
+
+    }
 
 }
-
-.fecha{
-
-    color:var(--plata);
-
-    font-size:1.3rem;
-
-}
-
 
 /*==============================
     ESFERA
@@ -257,21 +369,31 @@ section{
 
     display:inline-block;
 
-    margin-top:40px;
+    margin-top:45px;
 
-    padding:16px 40px;
+    padding:18px 45px;
 
-    text-decoration:none;
+    border-radius:60px;
+
+    border:1px solid rgba(255,255,255,.18);
 
     color:white;
 
-    border:1px solid rgba(255,255,255,.25);
+    text-decoration:none;
 
-    border-radius:50px;
+    background:rgba(255,255,255,.06);
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(12px);
 
     transition:.35s;
+
+}
+
+.btn-principal:hover{
+
+    background:#d9d9d9;
+
+    color:black;
 
 }
 
@@ -396,6 +518,28 @@ footer{
 ==============================*/
 
 @media(max-width:768px){
+
+.hero::before{
+
+    width:600px;
+
+    height:600px;
+
+    top:-250px;
+
+}
+
+.hero h1{
+
+    font-size:4rem;
+
+}
+
+.hero-content{
+
+    margin-top:80px;
+
+}
 
 .hero h1{
 
