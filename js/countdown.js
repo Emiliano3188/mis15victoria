@@ -2,7 +2,7 @@
 // FECHA DEL EVENTO
 //==========================================
 
-const fechaEvento = new Date("September 18, 2027 21:00:00").getTime();
+const fechaEvento = new Date("September 05, 2026 21:00:00").getTime();
 
 function actualizarContador(){
 

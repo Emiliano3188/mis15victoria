@@ -275,22 +275,19 @@
 
 
 
-    <!-- ===================================== -->
-    <!-- GALERIA                              -->
-    <!-- ===================================== -->
+ <!--=========================================
+            GALERIA
+==========================================-->
 
-    <section
-        class="section gris">
+<section id="galeria">
 
-        <div class="container">
+    <div class="container">
 
-            <h2>
+        <h2>Galería</h2>
 
-                Galería
+        <div class="slider">
 
-            </h2>
-
-            <div class="gallery">
+            <div class="slides">
 
                 <img src="img/foto1.jpg">
 
@@ -300,12 +297,25 @@
 
                 <img src="img/foto4.jpg">
 
+                <img src="img/foto5.jpg">
+
             </div>
 
         </div>
 
-    </section>
+        <div class="dots">
 
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 
@@ -349,70 +359,60 @@
 
 
 
+<!-- ==========================================
+        MENSAJE PARA VICTORIA
+========================================== -->
 
+<section id="mensajes">
 
-    <!-- ===================================== -->
-    <!-- MENSAJES                             -->
-    <!-- ===================================== -->
+    <div class="container">
 
-    <section
-        class="section gris"
-        id="mensajes">
+        <h2>💌 Dejale un recuerdo para toda la vida</h2>
 
-        <div class="container">
+        <p class="intro">
 
-            <h2>
+            Cada mensaje quedará guardado para que Victoria pueda leerlo siempre que lo desee.
 
-                💌 Un mensaje para mí
+        </p>
 
-            </h2>
+        <form id="formMensaje">
 
-            <p>
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Tu nombre">
 
-                Si querés, podés dejarme unas palabras.
+            <small id="errorNombre"></small>
 
-                Las guardaré como un hermoso recuerdo
-                de esta noche.
+            <textarea
+                id="mensaje"
+                rows="6"
+                maxlength="500"
+                placeholder="Escribile unas lindas palabras..."></textarea>
 
-            </p>
+            <div class="contador">
 
-            <form
-                id="formMensajes">
+                <span id="contadorCaracteres">
 
-                <input
-                    type="text"
-                    id="nombre"
-                    placeholder="Tu nombre"
-                    required>
+                    0 / 500
 
-                <textarea
-                    id="mensaje"
-                    placeholder="Escribí tu mensaje..."
-                    rows="6"
-                    required>
-                </textarea>
-
-                <button
-                    type="submit">
-
-                    Enviar Mensaje
-
-                </button>
-
-            </form>
-
-            <div
-                id="respuesta">
+                </span>
 
             </div>
 
-        </div>
+            <small id="errorMensaje"></small>
 
-    </section>
+            <button type="submit">
 
+                Enviar mensaje ❤️
 
+            </button>
 
+        </form>
 
+    </div>
+
+</section>
 
     <!-- ===================================== -->
     <!-- FOOTER                               -->
@@ -439,6 +439,8 @@
     <!-- JS -->
 
     <script src="js/countdown.js"></script>
+
+    <script src="js/galeria.js"></script>
 
     <script src="js/script.js"></script>
 
