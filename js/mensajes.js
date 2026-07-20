@@ -14,7 +14,7 @@ CAMBIAR ESTA URL
 =============================================
 */
 
-const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbwo3SCaO1TJ_kT2dy3-Q2YH6fs52BvOOx2qzooqnEg6qkvXHlcHhJdZ4DjfdAgWpF2kLQ/exec";
+const URL_SCRIPT = "https://script.google.com/macros/s/AKfycbz4moqIo5w0-xb6b3jVLV8RwHJtLy93PQwBH-gik4AFYXGQ-DDWgxUj46vUncI31MR3AQ/exec";
 
 
 
